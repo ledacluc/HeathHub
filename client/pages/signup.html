@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản - HealthHub</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/signup.css">
+</head>
+
+<body>
+
+    <div id="header"></div>
+
+    <section class="signup-container container">
+
+        <h1 class="page-title">Đăng kí người dùng</h1>
+
+        <form id="signupForm">
+            <div class="form-group">
+                <label>Họ và tên</label>
+                <input type="text" id="fullname" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="text" id="phone" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Mật khẩu</label>
+                <input type="password" id="password" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Nhập lại mật khẩu</label>
+                <input type="password" id="repassword" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Vai trò</label>
+                <select id="role" class="form-control">
+                <option value="">-- Chọn vai trò --</option>
+                <option value="patient">Bệnh nhân</option>
+                <option value="doctor">Bác sĩ</option>
+                <option value="nurse">Y tá</option>
+                </select>
+            </div>
+            <p class="link-login">Đã có tài khoản? <a href="./login.html">Đăng nhập ngay</a></p>
+            <button class="btn-submit">Đăng ký</button>
+        </form>
+
+
+    </section>
+    <div id="footer"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/signup.js"></script>
+</body>
+
+</html>

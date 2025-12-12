@@ -1,0 +1,118 @@
+.hero {
+    background: linear-gradient( rgba(46, 204, 113, 0.7), rgba(46, 10, 113, 0.7)), url('../images/banner.png');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 15px 0 25px;
+}
+
+.search-section {
+    margin-top: -40px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+}
+
+.search-box input,
+.search-box select {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.btn-search {
+    padding: 12px 20px;
+    background: var(--green-main);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-search:hover {
+    background: var(--green-dark);
+}
+
+.services h2,
+.doctors h2,
+.why h2 {
+    text-align: center;
+    margin: 40px 0 20px;
+    color: var(--green-dark);
+}
+
+.service-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+    transition: 0.2s;
+}
+
+.service-card img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.doctor-list {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.doctor-card {
+    background: white;
+    padding: 16px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.2s;
+}
+
+.doctor-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.doctor-card:hover {
+    transform: translateY(-5px);
+}
+
+.why-grid {
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 40px;
+}
+
+.why-item {
+    background: var(--green-light);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 5px solid var(--green-main);
+}

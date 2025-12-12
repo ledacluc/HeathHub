@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt lịch khám - HealthHub</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/booking.css">
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <section class="booking-container ">
+
+        <h1 class="page-title">Đặt lịch khám</h1>
+        <div class="card">
+            <h2>1. Chọn loại dịch vụ</h2>
+
+            <div class="service-types">
+                <label class="service-option">
+                    <input type="radio" name="service_type" value="online" checked>
+                    <span>Tư vấn online</span>
+                </label>
+
+                <label class="service-option">
+                    <input type="radio" name="service_type" value="home">
+                    <span>Khám tại nhà</span>
+                </label>
+
+                <label class="service-option">
+                    <input type="radio" name="service_type" value="lab_test">
+                    <span>Xét nghiệm tại nhà</span>
+                </label>
+
+                <label class="service-option">
+                    <input type="radio" name="service_type" value="package">
+                    <span>Gói dịch vụ</span>
+                </label>
+            </div>
+        </div>
+        <div class="card">
+            <h2>2. Chọn bác sĩ / Y tá</h2>
+
+            <div class="doctor-filter">
+                <select id="specialty">
+                    <option value="">Chuyên khoa</option>
+                    <option>Tim mạch</option>
+                    <option>Da liễu</option>
+                    <option>Nhi khoa</option>
+                    <option>Cơ xương khớp</option>
+                </select>
+
+                <input type="text" id="searchDoctor" placeholder="Tìm bác sĩ theo tên...">
+            </div>
+
+            <!-- DOCTOR LIST -->
+            <div class="doctor-list">
+                <div class="doctor-card">
+                    <img src="../assets/images/doctor1.png">
+                    <div class="doc-info">
+                        <h3>BS. Nguyễn Minh Khôi</h3>
+                        <p>Tim mạch - 10 năm kinh nghiệm</p>
+                        <button class="btn-select-doctor">Chọn</button>
+                    </div>
+                </div>
+
+                <div class="doctor-card">
+                    <img src="../assets/images/doctor2.jpg">
+                    <div class="doc-info">
+                        <h3>BS. Trần Thảo Nhi</h3>
+                        <p>Da liễu - 7 năm kinh nghiệm</p>
+                        <button class="btn-select-doctor">Chọn</button>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <img src="../assets/images/doctor3.png">
+                    <div class="doc-info">
+                        <h3>BS. Trần Thảo Nhi</h3>
+                        <p>Da liễu - 10 năm kinh nghiệm</p>
+                        <button class="btn-select-doctor">Chọn</button>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <img src="../assets/images/yta3.jpg">
+                    <div class="doc-info">
+                        <h3>YT. Trần Thảo Nhi</h3>
+                        <p>Da liễu - 7 năm kinh nghiệm</p>
+                        <button class="btn-select-doctor">Chọn</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <h2>3. Chọn thời gian khám</h2>
+
+            <div class="schedule-grid">
+                <button class="slot">08:00</button>
+                <button class="slot">09:00</button>
+                <button class="slot">10:00</button>
+                <button class="slot">13:00</button>
+                <button class="slot">14:00</button>
+                <button class="slot">15:00</button>
+                <button class="slot">16:00</button>
+                <button class="slot">17:00</button>
+                <button class="slot">18:00</button>
+                <button class="slot">19:00</button>
+                <button class="slot">20:00</button>
+                <button class="slot">21:00</button>
+                <button class="slot">22:00</button>
+            </div>
+        </div>
+        <div class="card">
+            <h2>4. Mô tả triệu chứng</h2>
+            <textarea id="description" placeholder="Bạn đang gặp vấn đề gì? (đau đầu, ho, mệt mỏi...)"></textarea>
+        </div>
+        <div class="card" id="addressBox" style="display:none;">
+            <h2>5. Địa chỉ khám tại nhà</h2>
+            <input type="text" id="address" placeholder="Nhập địa chỉ nhà của bạn">
+        </div>
+
+        <!-- SUBMIT -->
+        <button class="btn-submit">Xác nhận đặt lịch</button>
+
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/booking.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+ .booking-container {
+     overflow-x: hidden;
+ }
+ 
+ .booking-container {
+     margin: 60px auto 40px;
+     width: 100%;
+     max-width: 1100px;
+     padding: 0 20px;
+ }
+ 
+ .page-title {
+     font-size: 32px;
+     font-weight: bold;
+     color: #0b3fad;
+     text-align: center;
+     background-color: var(--green-main);
+     padding: 20px;
+     margin: 0px 400px 26px 400px;
+     border-radius: 50%;
+ }
+ 
+ .card {
+     background: #fff;
+     border-radius: 14px;
+     padding: 22px 28px;
+     margin-bottom: 25px;
+     border: 1px solid #dce7ff;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+ }
+ 
+ .card h2 {
+     color: #0b3fad;
+     margin-bottom: 18px;
+     font-size: 20px;
+ }
+ 
+ .service-types {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 15px;
+ }
+ 
+ .service-option {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     background: #eef4ff;
+     padding: 10px 14px;
+     border-radius: 8px;
+     cursor: pointer;
+     border: 1px solid #d5e2ff;
+     transition: 0.2s ease;
+ }
+ 
+ .service-option:hover {
+     background: #dce9ff;
+ }
+ 
+ .doctor-filter {
+     display: flex;
+     gap: 12px;
+ }
+ 
+ .doctor-filter select,
+ .doctor-filter input {
+     padding: 10px 14px;
+     border-radius: 8px;
+     border: 1px solid #cddcff;
+     width: 100%;
+ }
+ 
+ .doctor-list {
+     margin-top: 18px;
+     display: flex;
+     flex-direction: column;
+     gap: 18px;
+ }
+ 
+ .doctor-card {
+     display: flex;
+     gap: 18px;
+     padding: 15px;
+     border-radius: 12px;
+     background: #f3f7ff;
+     border: 1px solid #dbe6ff;
+     align-items: center;
+ }
+ 
+ .doctor-card img {
+     width: 85px;
+     height: 85px;
+     border-radius: 50%;
+     object-fit: cover;
+ }
+ 
+ .doc-info h3 {
+     font-size: 18px;
+     color: #0b3fad;
+     margin-bottom: 4px;
+ }
+ 
+ .doc-info p {
+     font-size: 14px;
+     color: #5c6f90;
+ }
+ /* Nút chọn */
+ 
+ .btn-select-doctor {
+     margin-left: auto;
+     background: #1d4ed8;
+     color: #fff;
+     border: none;
+     padding: 8px 18px;
+     border-radius: 8px;
+     cursor: pointer;
+     font-size: 14px;
+     transition: 0.2s ease;
+ }
+ 
+ .btn-select-doctor:hover {
+     background: var(--green-main);
+ }
+ 
+ .schedule-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+     gap: 15px;
+ }
+ 
+ .slot {
+     background: #e8f0ff;
+     border: 1px solid #c7d7ff;
+     padding: 12px 0;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: 0.2s;
+     text-align: center;
+ }
+ 
+ .slot:hover {
+     background: #d6e7ff;
+ }
+ 
+ textarea,
+ #address {
+     width: 100%;
+     padding: 14px;
+     border-radius: 10px;
+     border: 1px solid #c7d7ff;
+     resize: none;
+     font-size: 15px;
+ }
+ 
+ .btn-submit {
+     width: 100%;
+     margin-top: 15px;
+     background: var(--green-main);
+     color: #fff;
+     padding: 15px 0;
+     border: none;
+     font-size: 18px;
+     border-radius: 12px;
+     cursor: pointer;
+     transition: 0.2s;
+ }
+ 
+ .btn-submit:hover {
+     background: #0a3db8;
+ }

@@ -1,0 +1,52 @@
+.lab-page .lab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 28px
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #0b3fad;
+}
+
+.lab-card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.lab-card .price {
+    font-weight: 700;
+    margin: 14px 0
+}
+
+.request-form input,
+.request-form select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    margin-bottom: 12px
+}
+
+.btn-request {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    align-self: stretch
+}
+
+
+/* request form spacing */
+
+.request-form.card {
+    padding: 20px;
+    margin-top: var(--space-md);
+}

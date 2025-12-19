@@ -1,0 +1,41 @@
+.forum-page .ask-card {
+    padding: 18px;
+    margin-bottom: 22px;
+    background: white;
+    border-radius: 12px
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #0b3fad;
+}
+
+.forum-page input,
+.forum-page textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    margin: 10px 0
+}
+
+.question-item {
+    padding: 14px;
+    margin-bottom: 12px;
+    background: #fff;
+    border-radius: 12px
+}
+
+
+/* Slightly larger font and spacing for readability */
+
+.forum-page .question-item h4 {
+    margin-bottom: 6px
+}
+
+.forum-page .question-item p {
+    color: #667;
+    margin-bottom: 0
+}

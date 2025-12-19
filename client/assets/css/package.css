@@ -1,0 +1,46 @@
+.package-page .package-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: var(--space-lg)
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #0b3fad;
+}
+
+.package-card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.package-card .price {
+    font-weight: 800;
+    margin: 12px 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.btn-buy {
+    width: 100%;
+    padding: 12px
+}
+
+
+/* center grid on wider screens */
+
+.package-page {
+    text-align: center;
+}
+
+.package-page .package-grid {
+    align-items: start;
+}

@@ -3,30 +3,28 @@
  }
  
  .booking-container {
-     margin: 60px auto 40px;
+     margin: 70px auto 40px;
      width: 100%;
      max-width: 1100px;
      padding: 0 20px;
  }
+ /* use global .page-title from style.css, keep color accent */
  
  .page-title {
      font-size: 32px;
-     font-weight: bold;
+     font-weight: 700;
      color: #0b3fad;
      text-align: center;
-     background-color: var(--green-main);
-     padding: 20px;
-     margin: 0px 400px 26px 400px;
-     border-radius: 50%;
+     margin: 0 0 24px 0;
  }
  
  .card {
      background: #fff;
      border-radius: 14px;
-     padding: 22px 28px;
-     margin-bottom: 25px;
-     border: 1px solid #dce7ff;
-     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+     padding: 28px 32px;
+     margin-bottom: 28px;
+     border: 1px solid #e6eefb;
+     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
  }
  
  .card h2 {
@@ -38,7 +36,8 @@
  .service-types {
      display: flex;
      flex-wrap: wrap;
-     gap: 15px;
+     gap: 18px;
+     margin-bottom: 8px;
  }
  
  .service-option {
@@ -59,7 +58,8 @@
  
  .doctor-filter {
      display: flex;
-     gap: 12px;
+     gap: 16px;
+     align-items: center;
  }
  
  .doctor-filter select,
@@ -71,19 +71,19 @@
  }
  
  .doctor-list {
-     margin-top: 18px;
+     margin-top: 20px;
      display: flex;
      flex-direction: column;
-     gap: 18px;
+     gap: 20px;
  }
  
  .doctor-card {
      display: flex;
      gap: 18px;
-     padding: 15px;
+     padding: 18px;
      border-radius: 12px;
-     background: #f3f7ff;
-     border: 1px solid #dbe6ff;
+     background: #f7fbff;
+     border: 1px solid #e6efff;
      align-items: center;
  }
  
@@ -111,11 +111,11 @@
      background: #1d4ed8;
      color: #fff;
      border: none;
-     padding: 8px 18px;
+     padding: 10px 20px;
      border-radius: 8px;
      cursor: pointer;
      font-size: 14px;
-     transition: 0.2s ease;
+     transition: 0.15s ease;
  }
  
  .btn-select-doctor:hover {

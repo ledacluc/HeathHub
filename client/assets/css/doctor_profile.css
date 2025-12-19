@@ -1,0 +1,120 @@
+:root {
+    --accent: var(--green-main);
+}
+
+.doctor-profile .profile-card {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+h2,
+h3 {
+    color: #0b3fad;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.doctor-profile {
+    padding-top: 6px;
+}
+
+.doctor-profile .avatar img {
+    width: 160px;
+    border-radius: 12px
+}
+
+.doctor-profile .info .name {
+    font-size: 22px;
+    color: var(--text-dark);
+    margin-bottom: 6px
+}
+
+.doctor-profile .info .special {
+    color: #666;
+    margin-bottom: 10px
+}
+
+.doctor-profile .meta {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin: 10px 0
+}
+
+.doctor-profile .desc {
+    color: #444;
+    line-height: 1.5
+}
+
+.doctor-profile .actions {
+    margin-top: 14px;
+    display: flex;
+    gap: 10px
+}
+
+.btn-secondary {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #fff;
+    color: var(--text-dark);
+    cursor: pointer
+}
+
+.schedule-card .schedule-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.slot {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    background: #fafafa;
+    cursor: pointer
+}
+
+.slot.selected {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--green-dark)
+}
+
+.reviews-list {
+    margin-top: 12px
+}
+
+.review-item {
+    background: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 8px
+}
+
+.write-review textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    margin: 8px 0
+}
+
+
+/* Add spacing around cards inside the doctor profile page */
+
+.doctor-profile .schedule-card,
+.doctor-profile .reviews-card {
+    margin-top: var(--space-md);
+}
+
+.doctor-profile .info {
+    min-width: 320px;
+}

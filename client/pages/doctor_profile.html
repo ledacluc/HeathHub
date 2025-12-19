@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin bác sĩ - HealthHub</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/doctor_profile.css">
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <section class="container doctor-profile">
+        <div class="profile-card">
+            <div class="avatar">
+                <img src="../assets/images/doctor1.png" alt="avatar">
+            </div>
+            <div class="info">
+                <h1 class="name">BS. Nguyễn Minh Khôi</h1>
+                <p class="special">Tim mạch • Thạc sĩ • 10 năm kinh nghiệm</p>
+                <div class="meta">
+                    <div class="rating">⭐⭐⭐⭐☆ <span>(4.5)</span></div>
+                    <div class="price">Giá khám: <strong>250.000₫</strong></div>
+                </div>
+                <p class="desc">Chuyên khám và điều trị các bệnh lý tim mạch, tư vấn điều trị và theo dõi lâu dài cho bệnh nhân.</p>
+                <div class="actions">
+                    <button id="btnBook" class="btn-primary">Đặt lịch</button>
+                    <button id="btnMessage" class="btn-secondary">Nhắn tin</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card schedule-card">
+            <h2>Lịch khám</h2>
+            <div class="schedule-grid">
+                <button class="slot">08:00</button>
+                <button class="slot">09:00</button>
+                <button class="slot">10:00</button>
+                <button class="slot">13:00</button>
+                <button class="slot">14:00</button>
+                <button class="slot">15:00</button>
+            </div>
+        </div>
+
+        <div class="card reviews-card">
+            <h2>Đánh giá</h2>
+            <div class="reviews-list">
+                <div class="review-item">
+                    <strong>Nguyễn A</strong>
+                    <p>Rất nhiệt tình, tư vấn rõ ràng và dễ hiểu.</p>
+                </div>
+                <div class="review-item">
+                    <strong>Trần B</strong>
+                    <p>Khám kỹ, kê thuốc phù hợp, tình trạng cải thiện nhanh.</p>
+                </div>
+            </div>
+
+            <div class="write-review">
+                <h3>Viết đánh giá</h3>
+                <textarea id="reviewText" placeholder="Chia sẻ trải nghiệm của bạn..."></textarea>
+                <button id="submitReview" class="btn-primary">Gửi đánh giá</button>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/doctor_profile.js"></script>
+</body>
+
+</html>

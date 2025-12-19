@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xét nghiệm - HealthHub</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="../assets/css/lab.css">
+
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <section class="container lab-page">
+        <h1 class="page-title">Dịch vụ xét nghiệm</h1>
+
+        <div class="lab-grid">
+            <div class="lab-card">
+                <h3>Xét nghiệm tổng quát</h3>
+                <p>Gói xét nghiệm cơ bản: máu, đường huyết, mỡ máu.</p>
+                <div class="price">150.000₫</div>
+                <button class="btn-primary btn-request">Yêu cầu lấy mẫu tại nhà</button>
+            </div>
+
+            <div class="lab-card">
+                <h3>Xét nghiệm viêm gan</h3>
+                <p>Kiểm tra chỉ số viêm gan A/B/C.</p>
+                <div class="price">250.000₫</div>
+                <button class="btn-primary btn-request">Yêu cầu lấy mẫu tại nhà</button>
+            </div>
+
+            <div class="lab-card">
+                <h3>Xét nghiệm PCR</h3>
+                <p>Xét nghiệm theo mẫu dịch hoặc máu.</p>
+                <div class="price">400.000₫</div>
+                <button class="btn-primary btn-request">Yêu cầu lấy mẫu tại nhà</button>
+            </div>
+        </div>
+
+        <div class="request-form card" id="requestForm" style="display:none;">
+            <h2>Yêu cầu lấy mẫu</h2>
+            <label>Chọn gói</label>
+            <select id="labSelect">
+                <option value="basic">Xét nghiệm tổng quát</option>
+                <option value="hepatitis">Xét nghiệm viêm gan</option>
+                <option value="pcr">Xét nghiệm PCR</option>
+            </select>
+
+            <label>Ngày lấy mẫu</label>
+            <input type="date" id="labDate">
+
+            <label>Hình thức</label>
+            <select id="labType">
+                <option value="home">Lấy mẫu tại nhà</option>
+                <option value="center">Đến trung tâm</option>
+            </select>
+
+            <div id="labAddress" style="display:none;">
+                <label>Địa chỉ</label>
+                <input type="text" id="labAddrInput" placeholder="Nhập địa chỉ lấy mẫu">
+            </div>
+
+            <button id="submitLab" class="btn-primary">Gửi yêu cầu</button>
+        </div>
+
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/lab.js"></script>
+</body>
+
+</html>

@@ -114,6 +114,12 @@
     padding: 20px;
     border-radius: 12px;
     text-align: center;
-    border: 5px solid var(--green-main);
-    box-shadow: 5px 5px 5px 5px rgba(155, 205, 174, 0.07);
+    border: 3px solid var(--green-main);
+    box-shadow: 0 4px 10px rgba(11, 66, 32, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(11, 66, 32, 0.18);
 }

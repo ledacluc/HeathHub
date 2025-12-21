@@ -168,3 +168,80 @@
  .btn-submit:hover {
      background: #0a3db8;
  }
+ /* ===============================
+   BOOKING – SELECT STATE STYLES
+   =============================== */
+ /* ===== SERVICE TYPE ===== */
+ 
+ .service-option {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     background: #eef4ff;
+     padding: 10px 14px;
+     border-radius: 8px;
+     cursor: pointer;
+     border: 1px solid #d5e2ff;
+     transition: 0.2s ease;
+ }
+ 
+ .service-option:hover {
+     background: #dce9ff;
+ }
+ 
+ .service-option:has(input:checked) {
+     background: #1d4ed8;
+     color: #fff;
+     border-color: #1d4ed8;
+ }
+ 
+ .service-option:has(input:checked) input {
+     accent-color: #fff;
+ }
+ /* ===== SLOT TIME ===== */
+ 
+ .slot {
+     background: #e8f0ff;
+     border: 1px solid #c7d7ff;
+     padding: 12px 0;
+     border-radius: 8px;
+     cursor: pointer;
+     transition: 0.2s;
+     text-align: center;
+ }
+ 
+ .slot:hover {
+     background: #d6e7ff;
+ }
+ 
+ .slot.selected {
+     background: #1d4ed8;
+     color: #fff;
+     border-color: #1d4ed8;
+     font-weight: 600;
+ }
+ /* ===== DOCTOR BUTTON ===== */
+ 
+ .btn-select-doctor {
+     margin-left: auto;
+     background: #1d4ed8;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 8px;
+     cursor: pointer;
+     font-size: 14px;
+     transition: 0.15s ease;
+ }
+ 
+ .btn-select-doctor:hover {
+     background: #2563eb;
+ }
+ 
+ .btn-select-doctor.selected {
+     background: #16a34a;
+ }
+ 
+ .btn-select-doctor.selected::after {
+     font-weight: bold;
+ }

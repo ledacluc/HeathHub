@@ -13,7 +13,13 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
 }
 
-h2,
+.schedule-card h2 {
+    color: #0b3fad;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.reviews-card h2,
 h3 {
     color: #0b3fad;
     margin-top: 20px;

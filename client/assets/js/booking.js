@@ -1,35 +1,74 @@
-// Show address field only when service = home or lab_test
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('input[name="service_type"]').forEach(radio => {
+
+    /* --- 1. Hiện / ẩn địa chỉ theo loại dịch vụ --- */
+    const serviceRadios = document.querySelectorAll('input[name="service_type"]');
+    const addressBox = document.getElementById("addressBox");
+
+    serviceRadios.forEach(radio => {
         radio.addEventListener("change", () => {
-            let type = document.querySelector('input[name="service_type"]:checked').value;
+            const checked = document.querySelector('input[name="service_type"]:checked');
+            const type = checked ? checked.value : "";
 
             if (type === "home" || type === "lab_test") {
-                document.getElementById("addressBox").style.display = "block";
+                addressBox.style.display = "block";
             } else {
-                document.getElementById("addressBox").style.display = "none";
+                addressBox.style.display = "none";
             }
         });
     });
 
-    // Slot selection
-    document.querySelectorAll('.slot').forEach(btn => {
+
+    /* --- 2. Chọn slot thời gian --- */
+    const slots = document.querySelectorAll('.slot');
+    slots.forEach(slot => {
+        slot.addEventListener('click', () => {
+            slots.forEach(s => s.classList.remove('selected'));
+            slot.classList.add('selected');
+        });
+    });
+
+
+    /* --- 3. Chọn bác sĩ / y tá --- */
+    const doctorButtons = document.querySelectorAll('.btn-select-doctor');
+    doctorButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            document.querySelectorAll('.slot').forEach(s => s.classList.remove('selected'));
+            doctorButtons.forEach(b => b.classList.remove('selected'));
             btn.classList.add('selected');
         });
     });
 
-    // Submit handler (placeholder)
+
+    /* --- 4. Submit handler (ĐÃ FIX LỖI) --- */
     const submit = document.querySelector('.btn-submit');
-    if (submit) {
-        submit.addEventListener('click', () => {
-            // gather minimal data
-            const service = document.querySelector('input[name="service_type"]:checked').value;
-            const description = document.getElementById('description').value || '';
-            const address = document.getElementById('address') ? document.getElementById('address').value : '';
-            const slot = document.querySelector('.slot.selected') ? document.querySelector('.slot.selected').textContent : '';
-            alert(`Yêu cầu đặt lịch:\nDịch vụ: ${service}\nThời gian: ${slot}\nĐịa chỉ: ${address}\nMô tả: ${description}`);
-        });
-    }
+    if (!submit) return;
+
+    submit.addEventListener('click', () => {
+
+        const serviceEl = document.querySelector('input[name="service_type"]:checked');
+        const service = serviceEl ? serviceEl.value : '';
+
+        const descriptionEl = document.getElementById('description');
+        const description = descriptionEl ? descriptionEl.value : '';
+
+        const addressEl = document.getElementById('address');
+        const address = addressEl ? addressEl.value : '';
+
+        const slotEl = document.querySelector('.slot.selected');
+        const slot = slotEl ? slotEl.textContent : '';
+
+        const doctorBtn = document.querySelector('.btn-select-doctor.selected');
+        const doctor = doctorBtn ?
+            doctorBtn.parentElement.querySelector('h3').textContent :
+            '';
+
+        alert(
+            `Yêu cầu đặt lịch:
+Dịch vụ: ${service}
+Bác sĩ/Y tá: ${doctor}
+Thời gian: ${slot}
+Địa chỉ: ${address}
+Mô tả: ${description}`
+        );
+    });
+
 });

@@ -1,4 +1,4 @@
-.hero {
+.hero-banner {
     background: linear-gradient( rgba(46, 204, 113, 0.7), rgba(46, 10, 113, 0.7)), url('../images/banner.png');
     background-size: cover;
     background-position: center;
@@ -7,12 +7,12 @@
     text-align: center;
 }
 
-.hero h1 {
+.hero-banner h1 {
     font-size: 40px;
     font-weight: 700;
 }
 
-.hero p {
+.hero-banner p {
     font-size: 18px;
     margin: 15px 0 25px;
 }
@@ -122,4 +122,13 @@
 .why-item:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 10px 25px rgba(11, 66, 32, 0.18);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #0D47A1;
 }

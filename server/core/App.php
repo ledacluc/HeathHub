@@ -1,34 +1,23 @@
-<?php   
-class Model {
-    protected $controller = 'HomeController';
-    protected $method = 'index';
-    protected $params = [];
+<?php
 
-    public function __construct(){
-        $url = $this->parseUrl();
+class App {
 
-        if(file_exists('../controllers/' . ucfirst($url[0]). 'Controller.php')){
-            $this->controller = ucfirst($url[0]) . 'Controller';
-            unset($url[0]);
+    public function __construct() {
+
+        $url = isset($_GET['url']) ? '/' . trim($_GET['url'], '/') : '/';
+
+        require_once "../routes/api.php";
+        global $router;
+
+        $method = $_SERVER['REQUEST_METHOD'];
+
+        if (!$router->dispatch($method, $url)) {
+            http_response_code(404);
+            echo json_encode([
+                'success' => false,
+                'message' => 'duong dan khong tim thay!'
+            ]);
         }
-
-        require_once '../controllers/' .this->controller . '.php';
-        $this->controller = new $this->controller;
-
-        if(isset($url[1])) && method_exists($this->controller, $url[1]){
-            $this->method = $url[1];
-            unset($url[1]);
-        }
-
-        $this->params = $url ? array_values($url) : [];
-        call_user_func_array([$this->controller, $this->method], $this->params);
-    }
-
-    public function parseUrl(){
-        if(isset($_GET['url'])){
-            return explode('/', filter_var(rtrim($_GET['url', '/'], FILTER_SANITIZE_URL)));
-        }
-        return [];
     }
 }
 ?>

@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // mat khau
-        if (pass.length < 6) {
-            alert("Mật khẩu phải ít nhất 6 ký tự");
+        if (pass.length < 8) {
+            alert("Mật khẩu phải ít nhất 8 ký tự");
             return;
         }
 
@@ -64,8 +64,36 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Vui lòng chọn vai trò");
             return;
         }
+        ///-lấy dữ liệu và đẩy lên database
 
-        alert(" Đăng ký thành công !");
+        fetch("http://localhost/HealthHub/server/public/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                fullname: fullname,
+                phone: phone,
+                email: email,
+                password: pass,
+                role: role
+            })
+        })
+
+        .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Đăng kí thành công");
+                    window.location.href = "login.html"
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(err => {
+                alert("Lỗi Server !");
+                console.error(err);
+            });
+
     }
 
 });

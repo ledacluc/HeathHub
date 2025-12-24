@@ -1,10 +1,10 @@
 <?php
 class Model {
-    protected $dbname;
+    protected $db;
 
     public function __construct() {
         global $pdo;
-        $this->dbname = $pdo;
+        $this->db = $pdo;
     } 
 }
 ?>

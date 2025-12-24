@@ -1,14 +1,18 @@
-document.getElementById("loginForm").addEventListener("submit", function(e) {
+document.getElementById('loginForm').addEventListener('submit', async e => {
     e.preventDefault();
 
-    let identity = document.getElementById("loginIdentity").value.trim();
-    let password = document.getElementById("loginPassword").value.trim();
+    const form = e.target;
+    const res = await fetch(
+        'http://localhost/HealthHub/server/public/auth/handleLogin', {
+            method: 'POST',
+            body: new FormData(form)
+        }
+    );
 
-    if (identity === "" || password === "") {
-        alert("Vui lòng nhập đầy đủ thông tin.");
-        return;
+    const data = await res.json();
+    if (data.status === "success") {
+        window.location.href = 'Home.html';
+    } else {
+        alert("Sai tài khoản hoặc mật khẩu !");
     }
-
-    // TODO: Khi sang backend sẽ gọi API tại đây
-    alert("Đăng nhập thành công (UI test)");
 });

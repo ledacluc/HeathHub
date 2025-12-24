@@ -2,13 +2,16 @@
 $host = "localhost";
 $user = "root"; 
 $pass = "";
-$dbname = "healthhub";
+$db   = "healthhub";
 
-try{
-   $pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass, charset=utf8);
-    // Set the PDO error mode to exception
+try {
+    $pdo = new PDO(
+        "mysql:host=$host;dbname=$db;charset=utf8",
+        $user,
+        $pass
+    );
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}catch(PDOException $e){
+} catch(PDOException $e) {
     die("ERROR: Could not connect. " . $e->getMessage());
 }
 ?>

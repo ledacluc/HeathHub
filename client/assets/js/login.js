@@ -1,18 +1,28 @@
 document.getElementById('loginForm').addEventListener('submit', async e => {
     e.preventDefault();
 
-    const form = e.target;
+    const login = document.getElementById('login').value.trim(); // email hoặc sdt
+    const password = document.getElementById('password').value.trim();
+
     const res = await fetch(
-        'http://localhost/HealthHub/server/public/auth/handleLogin', {
+        'http://localhost/HealthHub/server/public/login', {
             method: 'POST',
-            body: new FormData(form)
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                login,
+                password
+            })
         }
     );
 
     const data = await res.json();
-    if (data.status === "success") {
+
+    if (data.success) {
+        alert("Đăng nhập thành công");
         window.location.href = 'Home.html';
     } else {
-        alert("Sai tài khoản hoặc mật khẩu !");
+        alert(data.message || "Sai tài khoản hoặc mật khẩu!");
     }
 });

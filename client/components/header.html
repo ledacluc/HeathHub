@@ -14,9 +14,21 @@
         </div>
     </nav>
 
-    <div>
-        <a href="../pages/login.html" class="btn-ls">
-            <i class="fa-solid fa-user-circle"></i> Đăng nhập
-        </a>
+    <!-- LOGIN -->
+    <a href="../pages/login.html" class="btn-ls" id="loginBtn">
+        <i class="fa-solid fa-user-circle"></i> Đăng nhập
+    </a>
+
+    <!-- USER -->
+    <div id="userMenu" style="display:none">
+        <span id="userName"></span>
+        <button id="accountBtn">Tài khoản</button>
+    </div>
+
+    <!-- POPUP -->
+    <div id="accountPopup" style="display:none">
+        <p id="infoName"></p>
+        <p id="infoEmail"></p>
+        <button onclick="logout()">Đăng xuất</button>
     </div>
 </header>

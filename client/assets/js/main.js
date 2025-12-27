@@ -9,7 +9,12 @@ fetch("../components/header.html")
         bindAccountButton();
     });
 
-
+// LOod footer
+fetch("../components/footer.html")
+    .then(res => res.text())
+    .then(html => {
+        document.getElementById("footer").innerHTML = html;
+    });
 // CHECK LOGIN 
 async function checkLogin() {
     const res = await fetch('http://localhost/HealthHub/server/public/me');
@@ -18,7 +23,10 @@ async function checkLogin() {
     if (data.loggedIn) {
         document.getElementById("loginBtn").style.display = "none";
         document.getElementById("userMenu").style.display = "inline-block";
-        document.getElementById("userName").innerText = data.user.fullname;
+        // document.getElementById("userName").innerText = data.user.fullname;
+        // document.getElementById("phone").innerText = data.user.phone;
+
+
     }
 }
 
@@ -34,7 +42,7 @@ function bindAccountButton() {
 
         document.getElementById("infoName").innerText = data.user.fullname;
         document.getElementById("infoEmail").innerText = data.user.email || "";
-        document.getElementById("accountPopup").style.display = "block";
+
     };
 }
 

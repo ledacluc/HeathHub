@@ -9,7 +9,7 @@ h1 {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    color: #0b3fad;
+    color: var(--green-dark);
 }
 
 .lab-card {
@@ -20,6 +20,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
 }
 
 .lab-card .price {
@@ -40,7 +41,8 @@ h1 {
     width: 100%;
     padding: 12px;
     margin-top: 12px;
-    align-self: stretch
+    align-self: stretch;
+    background-color: var(--green-main);
 }
 
 

@@ -73,7 +73,9 @@ class AuthController extends Controller {
         $_SESSION['user'] = [
             'id' => $user['id'],
             'fullname' => $user['fullname'],
-            'role' => $user['role']
+            'role' => $user['role'],
+            'email' => $user['email'],
+            'phone' => $user['phone']
         ];
 
         echo json_encode([

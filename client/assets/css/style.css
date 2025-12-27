@@ -1,4 +1,4 @@
-/* RESET */
+/* ================= RESET ================= */
 
 * {
     margin: 0;
@@ -6,29 +6,59 @@
     box-sizing: border-box;
 }
 
-
-/* GLOBAL RESET */
-
-body {
-    padding-top: 110px;
-    /* dành chỗ cho header cố định */
-    background: #f7faff;
-    font-family: Arial, sans-serif;
-    margin: 0;
+html {
+    scroll-behavior: smooth;
 }
 
 
-/* MÀU CHỦ ĐẠO */
+/* ================= BODY LAYOUT ================= */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 100px;
+    background: var(--bg-light);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+#header {
+    flex-shrink: 0;
+}
+
+.booking-container,
+.forum-page,
+.auth-container,
+.main-content {
+    flex: 1;
+}
+
+#footer {
+    flex-shrink: 0;
+}
+
+
+/* ================= VARIABLES ================= */
 
 :root {
+    --blue-main: #0077b6;
+    --blue-dark: #023e8a;
+    --blue-light: #e0f7fa;
     --green-main: #2ecc71;
     --green-dark: #27ae60;
     --green-light: #e8f9ee;
     --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #f7faff;
+    --radius: 8px;
+    --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 
-/* CONTAINER CHUẨN */
+/* ================= CONTAINER ================= */
 
 .container {
     width: 90%;
@@ -37,29 +67,154 @@ body {
 }
 
 
-/* BUTTON CHUNG */
+/* ================= BUTTON ================= */
 
 .btn-primary {
     padding: 12px 24px;
-    background: var(--green-main);
-    color: white;
+    background: var(--blue-main);
+    color: #fff;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius);
     font-size: 16px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s ease;
+    box-shadow: var(--shadow);
 }
 
 .btn-primary:hover {
+    background: var(--blue-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    padding: 12px 24px;
+    background: var(--green-main);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-secondary:hover {
     background: var(--green-dark);
 }
 
 
-/* GRID CHUNG */
+/* ================= GRID ================= */
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
 
 .service-grid,
 .doctor-list,
 .why-grid {
     display: grid;
     gap: 20px;
+}
+
+
+/* ================= TYPOGRAPHY ================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--blue-dark);
+    font-weight: 700;
+}
+
+p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+
+/* ================= UTILITIES ================= */
+
+.card {
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 15px;
+    }
+    .container {
+        width: 95%;
+        max-width: 1000px;
+    }
+    .btn-primary,
+    .btn-secondary {
+        padding: 10px 20px;
+        font-size: 15px;
+    }
+    .service-grid,
+    .doctor-list,
+    .why-grid {
+        gap: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 14px;
+        padding-top: 90px;
+    }
+    .container {
+        width: 95%;
+        max-width: 100%;
+    }
+    .btn-primary,
+    .btn-secondary {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    .service-grid,
+    .doctor-list,
+    .why-grid {
+        gap: 12px;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 13px;
+        padding-top: 80px;
+    }
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+    .btn-primary,
+    .btn-secondary {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    .service-grid,
+    .doctor-list,
+    .why-grid {
+        gap: 10px;
+        grid-template-columns: 1fr;
+    }
 }

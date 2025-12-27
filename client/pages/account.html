@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tài khoản | HealthHub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/account.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <main>
+        <h2>Thông tin tài khoản</h2>
+
+        <p><b>Họ và tên:</b> <span id="fullname"></span></p>
+        <p><b>Vai trò:</b> <span id="role"></span></p>
+        <p><b>Số điện thoại:</b> <span id="phone"></span></p>
+        <p><b>Email:</b> <span id="email"></span></p>
+
+        <button onclick="logout()">Đăng xuất</button>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        fetch("http://localhost/HealthHub/server/public/me")
+            .then(res => res.json())
+            .then(data => {
+                if (!data.loggedIn) {
+                    window.location.href = "login.html";
+                } else {
+                    document.getElementById("fullname").innerText = data.user.fullname;
+                    document.getElementById("role").innerText = data.user.role;
+                    document.getElementById("phone").innerText = data.user.phone || "Chưa cập nhật";
+                    document.getElementById("email").innerText = data.user.email || "Chưa cập nhật";
+                }
+            });
+    </script>
+    <div id="footer"></div>
+</body>
+
+</html>

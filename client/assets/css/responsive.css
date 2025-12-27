@@ -1,0 +1,37 @@
+/* responsive.css */
+
+
+/* Tablet */
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 28px;
+    }
+    .card {
+        padding: 20px;
+    }
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+
+/* Small mobile */
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+    .card {
+        padding: 12px;
+    }
+}

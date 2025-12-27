@@ -9,7 +9,11 @@ h1 {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
-    color: #0b3fad;
+    color: var(--green-dark);
+}
+
+h3 {
+    color: var(--blue-main);
 }
 
 .package-card {
@@ -31,7 +35,12 @@ h1 {
 
 .btn-buy {
     width: 100%;
-    padding: 12px
+    padding: 12px;
+    background-color: var(--green-dark);
+}
+
+.btn-buy:hover {
+    background-color: var(--blue-dark);
 }
 
 

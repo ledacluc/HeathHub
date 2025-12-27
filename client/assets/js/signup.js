@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
     const form = document.querySelector("#signupForm");
 
     form.addEventListener("submit", function(e) {
@@ -8,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function validateSignup() {
-
         const fullname = document.querySelector("#fullname").value.trim();
         const email = document.querySelector("#email").value.trim();
         const phone = document.querySelector("#phone").value.trim();
@@ -36,20 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // --- PHONE 
+        // --- PHONE
         if (phone.length < 9 || phone.length > 11) {
             alert("Số điện thoại phải từ 9–11 số");
             return;
         }
 
-        for (let i = 0; i < phone.length; i++) {
-            if (phone[i] < '0' || phone[i] > '9') {
-                alert("Số điện thoại chỉ được chứa số");
-                return;
-            }
+        if (!/^\d+$/.test(phone)) {
+            alert("Số điện thoại chỉ được chứa số");
+            return;
         }
 
-        // mat khau
+        // --- PASSWORD
         if (pass.length < 8) {
             alert("Mật khẩu phải ít nhất 8 ký tự");
             return;
@@ -64,36 +60,41 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Vui lòng chọn vai trò");
             return;
         }
-        ///-lấy dữ liệu và đẩy lên database
 
+        // --- Gửi dữ liệu lên server
         fetch("http://localhost/HealthHub/server/public/signup", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                fullname: fullname,
-                phone: phone,
-                email: email,
-                password: pass,
-                role: role
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    fullname: fullname,
+                    phone: phone,
+                    email: email,
+                    password: pass,
+                    role: role,
+                }),
             })
-        })
-
-        .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    alert("Đăng kí thành công");
-                    window.location.href = "login.html"
+            .then(async(res) => {
+                const contentType = res.headers.get("content-type");
+                if (contentType && contentType.includes("application/json")) {
+                    return res.json();
                 } else {
-                    alert(data.message);
+                    const text = await res.text();
+                    throw new Error("Server không trả JSON: " + text);
                 }
             })
-            .catch(err => {
+            .then((data) => {
+                if (data.success) {
+                    alert("Đăng kí thành công");
+                    window.location.href = "login.html";
+                } else {
+                    alert(data.message || "Đăng ký thất bại");
+                }
+            })
+            .catch((err) => {
                 alert("Lỗi Server !");
                 console.error(err);
             });
-
     }
-
 });
